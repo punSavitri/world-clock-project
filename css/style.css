@@ -1,0 +1,14 @@
+body {
+  background-color: #42b883;
+}
+/* header section styling */
+h1 {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 40px;
+}
+/* footer section styling */
+footer {
+  text-align: center;
+}
