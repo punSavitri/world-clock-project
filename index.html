@@ -6,6 +6,10 @@
     <title>World Clock - Savitri Pun</title>
     <!-- custome css -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- moment js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <!-- moment js time zone library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -21,28 +25,32 @@
           <option value="">Sydney</option>
           <option value="">Switzerland</option>
         </select>
-        <div class="city">
+        <div class="city" id="chicagoCity">
           <div>
             <h2>
-              London<img src="images/ukflag.png" width="20px" height="20px" />
-            </h2>
-            <div class="date">February 27th, 2024</div>
-          </div>
-
-          <div class="time">23:20:12 <small>PM</small></div>
-        </div>
-        <div class="city">
-          <div>
-            <h2>
-              Switzerland<img
-                src="images/switzerlandflag.png"
+              Chicago<img
+                src="images/united-states-of-america.png"
                 width="20px"
                 height="20px"
               />
             </h2>
-            <div class="date">February 27th, 2024</div>
+            <div class="date"></div>
           </div>
-          <div class="time">23:20:12 <small>PM</small></div>
+
+          <div class="time"><small></small></div>
+        </div>
+        <div class="city" id="hongkongCity">
+          <div>
+            <h2>
+              Hong Kong<img
+                src="images/hong-kong.png"
+                width="20px"
+                height="20px"
+              />
+            </h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"><small></small></div>
         </div>
       </main>
     </div>
