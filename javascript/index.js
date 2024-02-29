@@ -8,7 +8,7 @@ function updateCityTime() {
     let chicagoTimeZone = moment().tz("America/Chicago");
     //console.log(chicagoTimeZone);
     chicagoDateElement.innerHTML = chicagoTimeZone.format("MMMM Do YYYY");
-    chicagoTimeElement.innerHTML = chicagoTimeZone.format("HH:mm:ss:SS[<small>]A[</small>]");
+    chicagoTimeElement.innerHTML = chicagoTimeZone.format("HH:mm:ss[<small>]A[</small>]");
   }
 
 
@@ -21,7 +21,7 @@ function updateCityTime() {
     let hongkongTimeZone = moment().tz("Asia/Hong_Kong");
     //console.log(hongkongTimeZone);
     hongkongDateElement.innerHTML = hongkongTimeZone.format("MMMM Do YYYY");
-    hongkongTimeElement.innerHTML = hongkongTimeZone.format("HH:mm:ss SS[<small>]A[</small>]");
+    hongkongTimeElement.innerHTML = hongkongTimeZone.format("HH:mm:ss[<small>]A[</small>]");
 
   }
 
@@ -52,7 +52,7 @@ function showSelectedCityDateAndTime(event) {
 
             <div class="time">${citytime.format("HH:mm:ss")}<small>${citytime.format("A")}</small></div>
           </div>    
-          <a href="index.html">Back to All Cities</a>      
+          <a href="/">Back to All Cities</a>      
   `
 
 };
