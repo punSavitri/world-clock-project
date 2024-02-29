@@ -21,17 +21,21 @@ function updateCityTime() {
     let hongkongTimeZone = moment().tz("Asia/Hong_Kong");
     //console.log(hongkongTimeZone);
     hongkongDateElement.innerHTML = hongkongTimeZone.format("MMMM Do YYYY");
-    hongkongTimeElement.innerHTML = hongkongTimeZone.format("HH:mm:ss:SS[<small>]A[</small>]");
+    hongkongTimeElement.innerHTML = hongkongTimeZone.format("HH:mm:ss SS[<small>]A[</small>]");
 
   }
 
 }
 
 
-//this function update the city date and time
-function updateCity(event) {
+//this function get the time zone of selected city and show the update current time and date
+function showSelectedCityDateAndTime(event) {
   //console.log(event.target.value);
   let timeZone = event.target.value;
+  if (timeZone === "current") {
+    timeZone = moment.tz.guess();
+  }
+
   let cityName = timeZone.replace("_", " ").split("/")[1];
   let citytime = moment().tz(timeZone);
   //console.log(citytime);
@@ -46,14 +50,16 @@ function updateCity(event) {
               <div class="date">${citytime.format("MMMM D YYYY")}</div>
             </div>
 
-            <div class="time">${citytime.format("HH:mm:ss")}<small>${citytime.format("A")}</small></div>
+            <div class="time">${citytime.format("h:mm:ss")}<small>${citytime.format("A")}</small></div>
           </div>          
   `
-
 };
+
+
+
 updateCityTime();
 setInterval(updateCityTime, 1000);
 
 
 let citiesSelectElement = document.querySelector("#cities");
-citiesSelectElement.addEventListener("change", updateCity);
+citiesSelectElement.addEventListener("change", showSelectedCityDateAndTime);
